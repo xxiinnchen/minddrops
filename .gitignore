@@ -12,6 +12,7 @@ frontend/minddrops/coverage
 frontend/minddrops/build
 
 # misc
+.DS_Store
 frontend/minddrops/.DS_Store
 frontend/minddrops/.env.local
 frontend/minddrops/.env.development.local
