@@ -12,6 +12,7 @@ import {
 } from "reactstrap";
 
 import ScrollspyNav from "./scrollSpy";
+import { useHistory } from 'react-router-dom';
 
 //stickey header
 import "react-sticky-header/styles.css";
@@ -23,6 +24,12 @@ class NavbarPage extends Component {
     this.state = {
       isOpenMenu: false,
     };
+  }
+
+  routeChange=()=> {
+    let path = 'login';
+    let history = useHistory();
+    history.push(path);
   }
 
   toggle = () => {
@@ -81,12 +88,13 @@ class NavbarPage extends Component {
                     <div className="nav-button ms-auto">
                       <Nav navbar className="navbar-end">
                         <li>
-                          <Button
+                          <Button 
+                            onClick={this.routeChange}
                             color="none"
                             type="button"
                             className="btn btn-primary navbar-btn btn-rounded waves-effect waves-light"
                           >
-                            Sign In
+                             Sign In
                           </Button>
                         </li>
                       </Nav>

@@ -17,31 +17,30 @@ if os.environ.get('IS_OFFLINE'):
 USERS_TABLE = os.environ['USERS_TABLE']
 
 
-@app.route('/whoami/<string:user_name>')
-def get_user(user_name):
-    result = dynamodb_client.get_item(
-        TableName=USERS_TABLE, Key={'username': {'S': user_name}}
-    )
-    item = result.get('Item')
-    if not item:
-        return jsonify({'error': 'Could not find user with provided "username"'}), 404
+# @app.route('/whoami/<string:user_name>')
+# def get_user(user_name):
+#     result = dynamodb_client.get_item(
+#         TableName=USERS_TABLE, Key={'username': {'S': user_name}}
+#     )
+#     item = result.get('Item')
+#     if not item:
+#         return jsonify({'error': 'Could not find user with provided "username"'}), 404
 
-    return jsonify(
-        {'username': item.get('username').get('S')}
-    )
+#     return jsonify(
+#         {'username': item.get('username').get('S')}
+#     )
 
-
-@app.route('/whoami', methods=['POST'])
+@app.route('/whoami', methods=['GET'])
 def create_user():
-    user_name = request.json.get('username')
-    if not user_name:
-        return jsonify({'error': 'Please provide "username"'}), 400
+    # user_name = request.json.get('username')
+    # if not user_name:
+    #     return jsonify({'error': 'Please provide "username"'}), 400
 
-    dynamodb_client.put_item(
-        TableName=USERS_TABLE, Item={'username': {'S': user_name}}
-    )
+    # dynamodb_client.put_item(
+    #     TableName=USERS_TABLE, Item={'username': {'S': user_name}}
+    # )
 
-    return jsonify({'username': user_name})
+    return jsonify({'username': "xc459"})
 
 
 @app.errorhandler(404)

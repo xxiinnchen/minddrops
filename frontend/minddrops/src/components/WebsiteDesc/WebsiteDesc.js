@@ -26,7 +26,7 @@ class WebsiteDesc extends Component {
             </Row>
           </Container>
           <div className="bg-pattern-effect">
-            <img src="assets/images/bg-pattern.png" alt="dorsin" />
+            <img src="assets/images/bg-pattern.png" alt="MindDrops" />
           </div>
         </section>
       </React.Fragment>

@@ -33,16 +33,14 @@ functions:
     handler: wsgi_handler.handler
     events:
       - http:
-          path: /
-          method: ANY
-      - http:
-          path: /{proxy+}
-          method: ANY
+          path: whoami
+          method: GET
 
 plugins:
   - serverless-wsgi
   - serverless-python-requirements
   - serverless-dynamodb-local
+  - serverless-offline
 resources:
   Resources:
     UsersTable:

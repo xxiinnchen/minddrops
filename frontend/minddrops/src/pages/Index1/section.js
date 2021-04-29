@@ -47,7 +47,7 @@ class Section extends Component {
             </div>
           </div>
           <div className="bg-pattern-effect">
-            <img src="assets/images/bg-pattern.png" alt="dorsin" />
+            <img src="assets/images/bg-pattern.png" alt="MindDrops" />
           </div>
           {/* Render ModalSection Component for Modal */}
           <ModalSection ref="child" channel="vimeo" videoId="99025203" />

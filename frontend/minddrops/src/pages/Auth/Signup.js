@@ -38,7 +38,7 @@ class Signup extends Component {
                               to="/"
                               className="text-dark text-uppercase account-pages-logo"
                             >
-                              Dorsin
+                              MindDrops
                             </Link>
                           </h3>
                           <p className="text-muted">

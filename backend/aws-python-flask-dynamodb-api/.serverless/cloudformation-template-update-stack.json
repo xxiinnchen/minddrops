@@ -180,7 +180,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/aws-python-flask-dynamodb-api/dev/1619645801304-2021-04-28T21:36:41.304Z/aws-python-flask-dynamodb-api.zip"
+          "S3Key": "serverless/aws-python-flask-dynamodb-api/dev/1619656679586-2021-04-29T00:37:59.586Z/aws-python-flask-dynamodb-api.zip"
         },
         "Handler": "wsgi_handler.handler",
         "Runtime": "python3.8",
@@ -203,14 +203,14 @@
         "ApiLogGroup"
       ]
     },
-    "ApiLambdaVersionTFvjQechiHx97FIVQzUhShUtxz1KAzBPp9abjEJo": {
+    "ApiLambdaVersionWOWyuufSZ7c8rPaDEc6dDSrsxrXFZjfIOSxy5CqFpfE": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "+DKyGtLNIYbrkfSRqJiyH1J+Xw7ihV6UT3GWdEmysrY="
+        "CodeSha256": "t6QapKfKAmnWCMiRWhiW0eV4DEUS6cpRg5EBq8WPYgc="
       }
     },
     "ApiGatewayRestApi": {
@@ -225,7 +225,7 @@
         "Policy": ""
       }
     },
-    "ApiGatewayResourceProxyVar": {
+    "ApiGatewayResourceWhoami": {
       "Type": "AWS::ApiGateway::Resource",
       "Properties": {
         "ParentId": {
@@ -234,22 +234,19 @@
             "RootResourceId"
           ]
         },
-        "PathPart": "{proxy+}",
+        "PathPart": "whoami",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
       }
     },
-    "ApiGatewayMethodAny": {
+    "ApiGatewayMethodWhoamiGet": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
-        "HttpMethod": "ANY",
+        "HttpMethod": "GET",
         "RequestParameters": {},
         "ResourceId": {
-          "Fn::GetAtt": [
-            "ApiGatewayRestApi",
-            "RootResourceId"
-          ]
+          "Ref": "ApiGatewayResourceWhoami"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -286,50 +283,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayMethodProxyVarAny": {
-      "Type": "AWS::ApiGateway::Method",
-      "Properties": {
-        "HttpMethod": "ANY",
-        "RequestParameters": {},
-        "ResourceId": {
-          "Ref": "ApiGatewayResourceProxyVar"
-        },
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        },
-        "ApiKeyRequired": false,
-        "AuthorizationType": "NONE",
-        "Integration": {
-          "IntegrationHttpMethod": "POST",
-          "Type": "AWS_PROXY",
-          "Uri": {
-            "Fn::Join": [
-              "",
-              [
-                "arn:",
-                {
-                  "Ref": "AWS::Partition"
-                },
-                ":apigateway:",
-                {
-                  "Ref": "AWS::Region"
-                },
-                ":lambda:path/2015-03-31/functions/",
-                {
-                  "Fn::GetAtt": [
-                    "ApiLambdaFunction",
-                    "Arn"
-                  ]
-                },
-                "/invocations"
-              ]
-            ]
-          }
-        },
-        "MethodResponses": []
-      }
-    },
-    "ApiGatewayDeployment1619645796342": {
+    "ApiGatewayDeployment1619656669385": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -338,8 +292,7 @@
         "StageName": "dev"
       },
       "DependsOn": [
-        "ApiGatewayMethodAny",
-        "ApiGatewayMethodProxyVarAny"
+        "ApiGatewayMethodWhoamiGet"
       ]
     },
     "ApiLambdaPermissionApiGateway": {
@@ -414,7 +367,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersionTFvjQechiHx97FIVQzUhShUtxz1KAzBPp9abjEJo"
+        "Ref": "ApiLambdaVersionWOWyuufSZ7c8rPaDEc6dDSrsxrXFZjfIOSxy5CqFpfE"
       },
       "Export": {
         "Name": "sls-aws-python-flask-dynamodb-api-dev-ApiLambdaFunctionQualifiedArn"

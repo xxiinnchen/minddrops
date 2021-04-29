@@ -37,7 +37,7 @@ class PasswordForget extends Component {
                               href="index.html"
                               className="text-dark text-uppercase account-pages-logo"
                             >
-                              Dorsin
+                              MindDrops
                             </a>
                           </h3>
                           <p className="text-muted">Reset Password</p>

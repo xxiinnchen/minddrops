@@ -38,11 +38,11 @@ class Login extends Component {
                               href="index.html"
                               className="text-dark text-uppercase account-pages-logo"
                             >
-                              Dorsin
+                              MindDrops
                             </a>
                           </h3>
                           <p className="text-muted">
-                            Sign in to continue to Dorsin.
+                            Sign in to continue to MindDrops.
                           </p>
                         </div>
                         <div className="p-3">
