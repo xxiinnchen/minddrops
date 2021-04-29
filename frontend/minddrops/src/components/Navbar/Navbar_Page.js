@@ -26,11 +26,11 @@ class NavbarPage extends Component {
     };
   }
 
-  routeChange=()=> {
-    let path = 'login';
-    let history = useHistory();
-    history.push(path);
-  }
+  // routeChange=()=> {
+  //   let path = 'login';
+  //   let history = useHistory();
+  //   history.push(path);
+  // }
 
   toggle = () => {
     this.setState({ isOpenMenu: !this.state.isOpenMenu });
