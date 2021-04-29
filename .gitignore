@@ -5,6 +5,8 @@ frontend/minddrops/node_modules
 frontend/minddrops/.pnp
 frontend/minddrops/.pnp.js
 
+backend/aws-node-express-dynamodb-api/node_modules
+
 # testing
 frontend/minddrops/coverage
 
