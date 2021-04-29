@@ -1,26 +1,26 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-frontend/minddrops/node_modules
-frontend/minddrops/.pnp
-frontend/minddrops/.pnp.js
+# frontend/minddrops/node_modules
+# frontend/minddrops/.pnp
+# frontend/minddrops/.pnp.js
 
-backend/aws-node-express-dynamodb-api/node_modules
+# backend/aws-node-express-dynamodb-api/node_modules
 
 # testing
 frontend/minddrops/coverage
 
 # production
-frontend/minddrops/build
+# frontend/minddrops/build
 
 # misc
 .DS_Store
 frontend/minddrops/.DS_Store
-frontend/minddrops/.env.local
-frontend/minddrops/.env.development.local
-frontend/minddrops/.env.test.local
-frontend/minddrops/.env.production.local
+# frontend/minddrops/.env.local
+# frontend/minddrops/.env.development.local
+# frontend/minddrops/.env.test.local
+# frontend/minddrops/.env.production.local
 
-frontend/minddrops/npm-debug.log*
-frontend/minddrops/yarn-debug.log*
-frontend/minddrops/yarn-error.log*
+# frontend/minddrops/npm-debug.log*
+# frontend/minddrops/yarn-debug.log*
+# frontend/minddrops/yarn-error.log*
